@@ -8,7 +8,14 @@ public class PCMiningDecorator extends PCDecorator{
 
     @Override
     public void doWork(){
-        pc.doWork();
-        System.out.print("Mining... ");
+        if(getState() instanceof PCStateON) {
+            pc.doWork();
+            System.out.print("Mining... ");
+        }
+        else
+        {
+            System.out.print("The PC isn't ON - Cannot Do Work!");
+        }
     }
+
 }

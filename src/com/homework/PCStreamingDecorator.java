@@ -8,7 +8,13 @@ public class PCStreamingDecorator extends PCDecorator {
 
     @Override
     public void doWork(){
-        pc.doWork();
-        System.out.print("Streaming... ");
+        if(getState() instanceof PCStateON) {
+            pc.doWork();
+            System.out.print("Streaming... ");
+        }
+        else
+        {
+            System.out.println("The PC isn't ON - Cannot Do Work!");
+        }
     }
 }

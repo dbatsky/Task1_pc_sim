@@ -8,7 +8,13 @@ public class PCGamingDecorator extends PCDecorator {
 
     @Override
     public void doWork(){
-        pc.doWork();
-        System.out.print("Gaming... ");
+        if(getState() instanceof PCStateON) {
+            pc.doWork();
+            System.out.print("Gaming... ");
+        }
+        else
+        {
+            System.out.println("The PC isn't ON - Cannot Do Work!");
+        }
     }
 }

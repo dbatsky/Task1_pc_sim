@@ -5,6 +5,10 @@ public class PC implements IPC {
 
     PCState state;
 
+    public PCState getState(){
+        return this.state;
+    };
+
     public PC(){
         this.state = new PCStateIncomplete(this);
     }
@@ -22,6 +26,12 @@ public class PC implements IPC {
     }
 
     public void doWork() {
-        System.out.print("\nWorking... ");
+        if(getState() instanceof PCStateON) {
+            System.out.print("\nWorking... ");
+        }
+        else
+        {
+            System.out.println("The PC isn't ON - Cannot Do Work!");
+        }
     }
 }
