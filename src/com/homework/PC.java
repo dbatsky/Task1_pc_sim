@@ -4,13 +4,21 @@ package com.homework;
 public class PC implements IPC {
 
     PCState state;
+    GPU gpu;
+    PSU psu;
+    CPU cpu;
+    MOBO mobo;
 
     public PCState getState(){
         return this.state;
     };
 
-    public PC(){
-        this.state = new PCStateIncomplete(this);
+    public PC(Builder builder){
+        this.state = new PCStateOFF(this);
+        this.gpu = builder.getGPU();
+        this.cpu = builder.getCPU();
+        this.mobo = builder.getMOBO();
+        this.psu = builder.getPSU();
     }
 
     public void turnOn(){
