@@ -1,12 +1,14 @@
 package com.homework;
 
+// Concrete Decorator
 public class PCGamingDecorator extends PCDecorator {
     public PCGamingDecorator(IPC computer) {
         this.pc = computer;
     }
 
     @Override
-    public String doWork(){
-        return pc.doWork() + "Gaming... ";
+    public void doWork(){
+        pc.doWork();
+        System.out.print("Gaming... ");
     }
 }
