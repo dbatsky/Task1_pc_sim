@@ -14,8 +14,17 @@ public class PCMiningDecorator extends PCDecorator{
         }
         else
         {
-            System.out.print("The PC isn't ON - Cannot Do Work!");
+            System.out.print("The PC isn't ON - Cannot Do Work!\n");
         }
+    }
+
+    public void turnOn() {
+        System.out.print("Mining ");
+        pc.turnOn();
+    }
+    public void turnOff(){
+        System.out.print("Mining ");
+        pc.turnOff();
     }
 
 }

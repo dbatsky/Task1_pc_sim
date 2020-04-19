@@ -7,7 +7,6 @@ public class PC implements IPC {
     GPU gpu;
     PSU psu;
     CPU cpu;
-    MOBO mobo;
 
     public PCState getState(){
         return this.state;
@@ -17,8 +16,8 @@ public class PC implements IPC {
         this.state = new PCStateOFF(this);
         this.gpu = builder.getGPU();
         this.cpu = builder.getCPU();
-        this.mobo = builder.getMOBO();
         this.psu = builder.getPSU();
+        System.out.println("New PC constructed!");
     }
 
     public void turnOn(){

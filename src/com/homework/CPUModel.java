@@ -1,0 +1,24 @@
+package com.homework;
+
+// flyweight
+public class CPUModel {
+    private String model;
+    private String company;
+    protected float defaultClockSpeed;
+    private int coreCount;
+
+    CPUModel(String company, String model, float clockSpeed, int coreCount) {
+        this.company = company;
+        this.model = model;
+        this.defaultClockSpeed = clockSpeed;
+        this.coreCount = coreCount;
+    }
+
+    public String getModel(){
+        return model;
+    }
+
+    public String getCompany(){
+        return company;
+    }
+}

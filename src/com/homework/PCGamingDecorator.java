@@ -14,7 +14,16 @@ public class PCGamingDecorator extends PCDecorator {
         }
         else
         {
-            System.out.println("The PC isn't ON - Cannot Do Work!");
+            System.out.println("The PC isn't ON - Cannot Do Work!\n");
         }
+    }
+    public void turnOn() {
+        System.out.print("Gaming ");
+        pc.turnOn();
+    }
+    public void turnOff(){
+        System.out.print("\n");
+        System.out.print("Gaming ");
+        pc.turnOff();
     }
 }

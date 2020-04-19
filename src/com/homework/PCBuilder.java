@@ -1,10 +1,18 @@
 package com.homework;
 
+// pc builder used for building the PC
+// used by chaining operations like
+/*
+ PC newPC = new PCBuilder()
+                 .buildCPU(cpu)
+                 .buildGPU(gpu)
+                 ...
+                 .getPC();
+ */
 public class PCBuilder implements Builder{
 
     CPU cpu;
     GPU gpu;
-    MOBO mobo;
     PSU psu;
 
     @Override
@@ -26,12 +34,6 @@ public class PCBuilder implements Builder{
     }
 
     @Override
-    public Builder buildMOBO(MOBO mobo) {
-    this.mobo = mobo;
-        return this;
-    }
-
-    @Override
     public GPU getGPU() {
         return this.gpu;
     }
@@ -41,10 +43,6 @@ public class PCBuilder implements Builder{
         return this.psu;
     }
 
-    @Override
-    public MOBO getMOBO() {
-        return this.mobo;
-    }
 
     @Override
     public CPU getCPU() {
@@ -53,7 +51,7 @@ public class PCBuilder implements Builder{
 
     @Override
     public PC getPC() {
-        if(cpu == null || gpu == null || psu == null || mobo == null) {
+        if(cpu == null || gpu == null || psu == null) {
             throw new IllegalArgumentException("Cannot build PC - components missing!");
         }
         else

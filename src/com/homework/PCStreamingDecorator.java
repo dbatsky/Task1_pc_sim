@@ -14,7 +14,16 @@ public class PCStreamingDecorator extends PCDecorator {
         }
         else
         {
-            System.out.println("The PC isn't ON - Cannot Do Work!");
+            System.out.println("The PC isn't ON - Cannot Do Work!\n");
         }
+    }
+
+    public void turnOn() {
+        System.out.print("Streaming ");
+        pc.turnOn();
+    }
+    public void turnOff(){
+        System.out.print("Streaming ");
+        pc.turnOff();
     }
 }

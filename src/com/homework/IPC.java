@@ -4,4 +4,6 @@ package com.homework;
 interface IPC {
     public void doWork();
     public PCState getState();
+    public void turnOn();
+    public void turnOff();
 }
