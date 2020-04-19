@@ -16,6 +16,5 @@
     * Facade - Interact with the subsystems using a higher-level interface
 
 *   Behavioral:
-    * State - PC exhibits different behaviour based on whether it is built and turned on
-    
+    * State - PC exhibits different behaviour based on whether it is turned ON
     
