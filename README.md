@@ -11,8 +11,8 @@
     * Singleton - Facade as a Singleton
 
 *   Structural:
-    * Flyweight - Different PCs can have the same Brand/Model of GPU
-    * Decorator - PC can have added functionality, according to its purpose that can be attached/detached
+    * Flyweight - Different PCs can have the same Brand/Model of GPU and CPU
+    * Decorator - PC can have added functionality, according to its purpose that can be attached
     * Facade - Interact with the subsystems using a higher-level interface
 
 *   Behavioral:
