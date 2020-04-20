@@ -2,11 +2,11 @@ package com.homework;
 
 public class pc_sim_test {
     public static void main(String[] args) {
+        // getting facade instance
+        PCFacade facade = PCFacade.getInstance();
+
         // adding flyweights to the pool
-        GPUFactory.addGPUModel("AMD", "RX5700XT", 1605, 1750, 8);
-        GPUFactory.addGPUModel("NVIDIA", "RTX2080TI", 1350, 1750, 11);
-        CPUFactory.addCPUModel("AMD", "R7 3800X", 3.9f, 8);
-        CPUFactory.addCPUModel("AMD", "R5 3600", 3.6f, 6);
+        facade.initFlyweights();
 
         // manual PC creation using builder
         IPC computer = new PCBuilderManual().buildGPU(new GPU(GPUFactory.getGPUModel("AMD", "RX5700XT")))
@@ -14,7 +14,7 @@ public class pc_sim_test {
                                     .buildPSU(new PSU(600))
                                     .getPC();
 
-        // PC creation using builder (GoF)
+        // PC creation using builder (GoF)s
         Director director = new Director();
         director.setBuilder(new PCBuilder_AMD_High_End());
         IPC computer_2 = director.buildPC();
