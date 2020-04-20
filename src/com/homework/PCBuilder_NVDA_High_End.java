@@ -1,35 +1,26 @@
 package com.homework;
 
-// pc builder used for building the PC
-// used by chaining operations like
-/*
- PC newPC = new PCBuilder()
-                 .buildCPU(cpu)
-                 .buildGPU(gpu)
-                 ...
-                 .getPC();
- */
-public class PCBuilder implements Builder{
-
+public class PCBuilder_NVDA_High_End implements Builder {
     CPU cpu;
     GPU gpu;
     PSU psu;
 
+
     @Override
-    public Builder buildCPU(CPU cpu) {
-        this.cpu = cpu;
+    public Builder buildCPU() {
+        this.cpu = new CPU(CPUFactory.getCPUModel("AMD", "R7 3800X"));
         return this;
     }
 
     @Override
-    public Builder buildGPU(GPU gpu){
-        this.gpu = gpu;
+    public Builder buildGPU(){
+        this.gpu = new GPU(GPUFactory.getGPUModel("NVIDIA", "RTX2080TI"));
         return this;
     }
 
     @Override
-    public Builder buildPSU(PSU psu) {
-        this.psu = psu;
+    public Builder buildPSU() {
+        this.psu = new PSU(700);
         return this;
     }
 
@@ -57,7 +48,4 @@ public class PCBuilder implements Builder{
         else
             return new PC(this);
     }
-
-
-
 }

@@ -7,10 +7,11 @@ public class Director {
         this.builder = builder;
     }
 
-    public void buildPC(Builder builder){
-
+    public PC buildPC(){
+        this.builder.buildCPU();
+        this.builder.buildGPU();
+        this.builder.buildPSU();
+        return this.builder.getPC();
     }
-    public void Construct(){
 
-    }
 }

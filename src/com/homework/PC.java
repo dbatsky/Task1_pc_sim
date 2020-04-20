@@ -20,6 +20,14 @@ public class PC implements IPC {
         System.out.println("New PC constructed!");
     }
 
+    public PC(PCBuilderManual builder){
+        this.state = new PCStateOFF(this);
+        this.gpu = builder.getGPU();
+        this.cpu = builder.getCPU();
+        this.psu = builder.getPSU();
+        System.out.println("New PC Manually constructed!");
+    }
+
     public void turnOn(){
         this.state.turnOn();
     }
