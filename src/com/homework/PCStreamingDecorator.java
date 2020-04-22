@@ -6,16 +6,9 @@ public class PCStreamingDecorator extends PCDecorator {
         this.pc = computer;
     }
 
-    @Override
-    public void doWork(){
-        if(getState() instanceof PCStateON) {
-            pc.doWork();
-            System.out.print("Streaming... ");
-        }
-        else
-        {
-            System.out.println("The PC isn't ON - Cannot Do Work!\n");
-        }
+    public void doWork(String output){
+        output = "Streaming... " + output;
+        this.pc.doWork(output);
     }
 
     public void turnOn() {

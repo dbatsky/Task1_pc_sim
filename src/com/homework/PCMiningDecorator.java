@@ -6,16 +6,9 @@ public class PCMiningDecorator extends PCDecorator{
         this.pc = computer;
     }
 
-    @Override
-    public void doWork(){
-        if(getState() instanceof PCStateON) {
-            pc.doWork();
-            System.out.print("Mining... ");
-        }
-        else
-        {
-            System.out.print("The PC isn't ON - Cannot Do Work!\n");
-        }
+    public void doWork(String output){
+        output = "Mining... " + output;
+        this.pc.doWork(output);
     }
 
     public void turnOn() {

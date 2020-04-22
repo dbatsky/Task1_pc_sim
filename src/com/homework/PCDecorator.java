@@ -8,10 +8,6 @@ Decorator is used to decorate an object, like:
         computer = new PCGamingDecorator(computer);
         computer.doWork(); <- decorated method
  */
-abstract public class PCDecorator implements IPC{
+abstract public class PCDecorator implements IPC {
     protected IPC pc;
-    abstract public void doWork();
-    public PCState getState(){
-       return this.pc.getState();
-    }
 }

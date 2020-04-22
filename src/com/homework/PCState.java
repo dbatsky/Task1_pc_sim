@@ -8,4 +8,5 @@ which determines how method calls are handled
 public interface PCState {
     public void turnOn();
     public void turnOff();
+    public void doWork(String output);
 }

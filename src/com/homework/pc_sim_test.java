@@ -21,17 +21,17 @@ public class pc_sim_test {
 
         computer.turnOff();
         computer.turnOn();
-        computer.doWork();
+        computer.doWork("");
         computer = new PCGamingDecorator(computer);
-        computer.doWork();
+        computer.doWork("");
         computer.turnOff();
         computer = new PCMiningDecorator(computer);
-        computer.doWork();
+        computer.doWork("");
         computer.turnOn();
-        computer.doWork();
+        computer.doWork("");
 
         computer_2 = new PCStreamingDecorator(computer_2);
         computer_2.turnOn();
-        computer_2.doWork();
+        computer_2.doWork("");
     }
 }

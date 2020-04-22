@@ -40,13 +40,7 @@ public class PC implements IPC {
         this.state = state;
     }
 
-    public void doWork() {
-        if(getState() instanceof PCStateON) {
-            System.out.print("\nWorking... ");
-        }
-        else
-        {
-            System.out.println("The PC isn't ON - Cannot Do Work!");
-        }
+    public void doWork(String output) {
+        this.state.doWork(output);
     }
 }

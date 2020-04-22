@@ -13,4 +13,7 @@ public class PCStateOFF implements PCState {
     public void turnOff(){
         System.out.println("PC is already OFF!");
     }
+    public void doWork(String output){
+        System.out.println("Cannot do work - PC is OFF!");
+    }
 }
