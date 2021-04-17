@@ -2,15 +2,13 @@ package com.homework;
 
 // builder interface
 interface Builder {
-    public Builder buildCPU();
-    public Builder buildGPU();
-    public Builder buildPSU();
+
+    Builder setCPU(CPU cpu);
+    Builder setGPU(GPU gpu);
+    Builder setPSU(PSU psu);
 
 
-    public GPU getGPU();
-    public PSU getPSU();
-    public CPU getCPU();
+    PC buildPC();
 
-
-    public PC getPC();
+    void reset();
 }

@@ -3,35 +3,40 @@ package com.homework;
 public class pc_sim_test {
     public static void main(String[] args) {
         // getting facade instance
-        PCFacade facade = PCFacade.getInstance();
+        PCFacade facade = PCFacade.getFacadeSingleton();
 
-        // adding flyweights to the pool
+        // adding GPU/CPU model flyweights to the pool, using the Facade
         facade.initFlyweights();
-
-        // manual PC creation using builder
-        IPC computer = new PCBuilderManual().buildGPU(new GPU(GPUFactory.getGPUModel("AMD", "RX5700XT")))
-                                    .buildCPU(new CPU(CPUFactory.getCPUModel("AMD", "R7 3800X")))
-                                    .buildPSU(new PSU(600))
-                                    .getPC();
 
         // PC creation using builder (GoF)s
         Director director = new Director();
-        director.setBuilder(new PCBuilder_AMD_High_End());
-        IPC computer_2 = director.buildPC();
+        PCBuilder pcBuilder = new PCBuilder();
+        director.setBuilder(pcBuilder);
 
-        computer.turnOff();
-        computer.turnOn();
-        computer.doWork("");
-        computer = new PCGamingDecorator(computer);
-        computer.doWork("");
-        computer.turnOff();
-        computer = new PCMiningDecorator(computer);
-        computer.doWork("");
-        computer.turnOn();
-        computer.doWork("");
+        System.out.println();
 
-        computer_2 = new PCStreamingDecorator(computer_2);
-        computer_2.turnOn();
-        computer_2.doWork("");
+        IPC nvidiaPC = director.buildNvidiaPC();
+        // changing PC states
+        nvidiaPC.turnOn();
+        nvidiaPC.turnOff();
+
+        System.out.println();
+
+        IPC amdPC = director.buildAmdPC();
+        amdPC.turnOn();
+
+        System.out.println();
+
+        // Adding behavior by using Decorators
+        // Working + Gaming PC
+        amdPC = new PCGamingDecorator(amdPC);
+        amdPC.doWork();
+        System.out.println();
+        // Working + Gaming + Streaming PC
+        amdPC = new PCStreamingDecorator(amdPC);
+        amdPC.doWork();
+        System.out.println();
+
+        amdPC.turnOff();
     }
 }

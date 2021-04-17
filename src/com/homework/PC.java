@@ -8,39 +8,29 @@ public class PC implements IPC {
     PSU psu;
     CPU cpu;
 
-    public PCState getState(){
+    public PCState getState() {
         return this.state;
-    };
-
-    public PC(Builder builder){
-        this.state = new PCStateOFF(this);
-        this.gpu = builder.getGPU();
-        this.cpu = builder.getCPU();
-        this.psu = builder.getPSU();
-        System.out.println("New PC constructed!");
     }
 
-    public PC(PCBuilderManual builder){
+
+    public PC() {
         this.state = new PCStateOFF(this);
-        this.gpu = builder.getGPU();
-        this.cpu = builder.getCPU();
-        this.psu = builder.getPSU();
-        System.out.println("New PC Manually constructed!");
     }
 
-    public void turnOn(){
+    public void turnOn() {
         this.state.turnOn();
     }
 
-    public void turnOff(){
+    public void turnOff() {
         this.state.turnOff();
     }
 
-    public void changeState(PCState state){
+    public void changeState(PCState state) {
         this.state = state;
     }
 
-    public void doWork(String output) {
-        this.state.doWork(output);
+    public void doWork() {
+        this.state.doWork();
     }
+
 }

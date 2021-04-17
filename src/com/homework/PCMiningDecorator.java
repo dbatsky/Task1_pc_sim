@@ -1,21 +1,24 @@
 package com.homework;
 
 // Concrete Decorator
-public class PCMiningDecorator extends PCDecorator{
+public class PCMiningDecorator extends PCDecorator {
+
     public PCMiningDecorator(IPC computer) {
-        this.pc = computer;
+        super(computer);
+        System.out.println("Mining capabilities installed.");
     }
 
-    public void doWork(String output){
-        output = "Mining... " + output;
-        this.pc.doWork(output);
+    public void doWork() {
+        System.out.print("Mining...");
+        this.pc.doWork();
     }
 
     public void turnOn() {
         System.out.print("Mining ");
         pc.turnOn();
     }
-    public void turnOff(){
+
+    public void turnOff() {
         System.out.print("Mining ");
         pc.turnOff();
     }

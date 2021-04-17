@@ -8,10 +8,11 @@ class GPU {
     GPUModel model;
 
     // default values are those that are set for each GPU model by the manufacturer
-    GPU(GPUModel model){
-        this.model = model;
-        this.memoryClock = model.defaultMemoryClock;
-        this.coreClock = model.defaultCoreClock;
+    GPU(String model){
+        GPUModel flyweightGpuModel = GPUFactory.getGPUModel(model);
+        this.model = flyweightGpuModel;
+        this.memoryClock = flyweightGpuModel.defaultMemoryClock;
+        this.coreClock = flyweightGpuModel.defaultCoreClock;
     }
 
     public int getModelMemorySize(){
@@ -32,5 +33,10 @@ class GPU {
 
     public void setCoreClock(float coreClock) {
         this.coreClock = coreClock;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Model: %s", this.model.toString());
     }
 }

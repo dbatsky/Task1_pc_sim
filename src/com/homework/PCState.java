@@ -6,7 +6,9 @@ PC can exist in several states (ON/OFF)
 which determines how method calls are handled
  */
 public interface PCState {
-    public void turnOn();
-    public void turnOff();
-    public void doWork(String output);
+    void turnOn();
+
+    void turnOff();
+
+    void doWork();
 }

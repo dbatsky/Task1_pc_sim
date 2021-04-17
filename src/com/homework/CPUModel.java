@@ -21,4 +21,9 @@ public class CPUModel {
     public String getCompany(){
         return company;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Company: %s, Model: %s", company, model);
+    }
 }

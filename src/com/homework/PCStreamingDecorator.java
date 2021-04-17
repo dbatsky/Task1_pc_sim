@@ -3,19 +3,21 @@ package com.homework;
 // Concrete Decorator
 public class PCStreamingDecorator extends PCDecorator {
     public PCStreamingDecorator(IPC computer) {
-        this.pc = computer;
+        super(computer);
+        System.out.println("Streaming capabilities installed.");
     }
 
-    public void doWork(String output){
-        output = "Streaming... " + output;
-        this.pc.doWork(output);
+    public void doWork() {
+        System.out.print("Streaming...");
+        this.pc.doWork();
     }
 
     public void turnOn() {
         System.out.print("Streaming ");
         pc.turnOn();
     }
-    public void turnOff(){
+
+    public void turnOff() {
         System.out.print("Streaming ");
         pc.turnOff();
     }
