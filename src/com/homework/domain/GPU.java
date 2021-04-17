@@ -1,6 +1,8 @@
-package com.homework;
+package com.homework.domain;
 
-class GPU {
+import com.homework.patterns.creational.flyweight.GPUFactory;
+
+public class GPU {
     // gpu can be overclocked, so each instance has, in addition to it's model, a current voltage/clock values
     private float memoryClock;
     private float coreClock;
@@ -8,7 +10,7 @@ class GPU {
     GPUModel model;
 
     // default values are those that are set for each GPU model by the manufacturer
-    GPU(String model){
+    public GPU(String model){
         GPUModel flyweightGpuModel = GPUFactory.getGPUModel(model);
         this.model = flyweightGpuModel;
         this.memoryClock = flyweightGpuModel.defaultMemoryClock;

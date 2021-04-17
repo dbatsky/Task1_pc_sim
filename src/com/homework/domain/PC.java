@@ -1,12 +1,15 @@
-package com.homework;
+package com.homework.domain;
+
+import com.homework.patterns.behavioral.state.PCState;
+import com.homework.patterns.behavioral.state.PCStateOFF;
 
 // the main pc class. Represents the PC
 public class PC implements IPC {
 
     PCState state;
-    GPU gpu;
-    PSU psu;
-    CPU cpu;
+    public GPU gpu;
+    public PSU psu;
+    public CPU cpu;
 
     public PCState getState() {
         return this.state;

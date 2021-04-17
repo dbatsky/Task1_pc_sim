@@ -1,7 +1,10 @@
-package com.homework;
+package com.homework.patterns.structural.decorator;
+
+import com.homework.domain.IPC;
 
 // Concrete Decorator
 public class PCStreamingDecorator extends PCDecorator {
+
     public PCStreamingDecorator(IPC computer) {
         super(computer);
         System.out.println("Streaming capabilities installed.");

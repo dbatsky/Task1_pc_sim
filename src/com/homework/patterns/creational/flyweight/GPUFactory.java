@@ -1,12 +1,12 @@
-package com.homework;
+package com.homework.patterns.creational.flyweight;
 
-import java.util.ArrayList;
+import com.homework.domain.GPUModel;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 // flyweight factory
-class GPUFactory {
+public class GPUFactory {
     // list of all available gpu models
     static private Map<String, GPUModel> GPUModels = new HashMap<>();
 
@@ -21,12 +21,13 @@ class GPUFactory {
 
     // interface for adding shared GPU models to the list
     static public void addGPUModel(String company, String model, float coreClock, float memoryClock, int memorySize) {
-        for (GPUModel gpumodel : GPUModels.values()) {
-            if (gpumodel.getModel() == model && gpumodel.getCompany() == company) {
-                System.out.println("GPU Model: " + company + " " + model + " already exists!");
-                return;
-            }
+        // if gpu model already exists
+        if (GPUModels.values().stream().anyMatch(existingModel ->
+                existingModel.getModel().equals(model) && existingModel.getCompany().equals(company))) {
+            System.out.println("GPU Model: " + company + " " + model + " already exists!");
+            return;
         }
+
         GPUModel newModel = new GPUModel(company, model, coreClock, memoryClock, memorySize);
         GPUModels.put(model, newModel);
         System.out.println("GPU Model: " + company + " " + model + " successfully added to the list!");

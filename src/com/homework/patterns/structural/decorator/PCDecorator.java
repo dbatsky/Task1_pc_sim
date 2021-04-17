@@ -1,4 +1,6 @@
-package com.homework;
+package com.homework.patterns.structural.decorator;
+
+import com.homework.domain.IPC;
 
 // the abstract common Decorator class
 /*
@@ -11,7 +13,7 @@ Decorator is used to decorate an object, like:
 public class PCDecorator implements IPC {
     protected IPC pc;
 
-    PCDecorator(IPC sourcePC) {
+    public PCDecorator(IPC sourcePC) {
         this.pc = sourcePC;
     }
 

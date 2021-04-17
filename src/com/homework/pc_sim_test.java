@@ -1,5 +1,12 @@
 package com.homework;
 
+import com.homework.domain.IPC;
+import com.homework.patterns.creational.builder.Director;
+import com.homework.patterns.creational.builder.PCBuilder;
+import com.homework.patterns.structural.facade.PCFacade;
+import com.homework.patterns.structural.decorator.PCGamingDecorator;
+import com.homework.patterns.structural.decorator.PCStreamingDecorator;
+
 public class pc_sim_test {
     public static void main(String[] args) {
         // getting facade instance

@@ -1,4 +1,6 @@
-package com.homework;
+package com.homework.patterns.structural.decorator;
+
+import com.homework.domain.IPC;
 
 // Concrete Decorator
 public class PCMiningDecorator extends PCDecorator {

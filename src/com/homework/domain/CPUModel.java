@@ -1,4 +1,4 @@
-package com.homework;
+package com.homework.domain;
 
 // flyweight
 public class CPUModel {
@@ -7,7 +7,7 @@ public class CPUModel {
     protected float defaultClockSpeed;
     private int coreCount;
 
-    CPUModel(String company, String model, float clockSpeed, int coreCount) {
+    public CPUModel(String company, String model, float clockSpeed, int coreCount) {
         this.company = company;
         this.model = model;
         this.defaultClockSpeed = clockSpeed;

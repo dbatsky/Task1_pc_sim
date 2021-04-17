@@ -1,8 +1,9 @@
-package com.homework;
+package com.homework.patterns.creational.flyweight;
 
-import java.util.ArrayList;
+import com.homework.domain.CPU;
+import com.homework.domain.CPUModel;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 // flyweight factory
@@ -21,11 +22,11 @@ public class CPUFactory {
 
     //  adding shared CPU models to the list
     static public void addCPUModel(String company, String model, float clockSpeed, int coreCount) {
-        for (CPUModel cpumodel : CPUModels.values()) {
-            if (cpumodel.getModel().equals(model) && cpumodel.getCompany().equals(company)) {
-                System.out.println("CPU Model: " + company + " " + model + " already exists!");
-                return;
-            }
+        // if cpu model already exists
+        if (CPUModels.values().stream().anyMatch(existingModel ->
+                existingModel.getModel().equals(model) && existingModel.getCompany().equals(company))) {
+            System.out.println("CPU Model: " + company + " " + model + " already exists!");
+            return;
         }
         CPUModel newModel = new CPUModel(company, model, clockSpeed, coreCount);
         CPUModels.put(model, newModel);

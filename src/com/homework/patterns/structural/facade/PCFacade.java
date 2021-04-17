@@ -1,4 +1,7 @@
-package com.homework;
+package com.homework.patterns.structural.facade;
+
+import com.homework.patterns.creational.flyweight.CPUFactory;
+import com.homework.patterns.creational.flyweight.GPUFactory;
 
 // Facade class for some calling some low-level initializations/operations
 public class PCFacade {

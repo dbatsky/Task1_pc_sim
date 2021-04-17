@@ -1,7 +1,7 @@
-package com.homework;
+package com.homework.domain;
 
 // the PC interface - common between the PC and various PC Decorations
-interface IPC {
+public interface IPC {
     void doWork();
     void turnOn();
     void turnOff();

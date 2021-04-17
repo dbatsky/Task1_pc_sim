@@ -1,4 +1,9 @@
-package com.homework;
+package com.homework.patterns.creational.builder;
+
+import com.homework.domain.CPU;
+import com.homework.domain.GPU;
+import com.homework.domain.PC;
+import com.homework.domain.PSU;
 
 public class PCBuilder implements Builder {
 

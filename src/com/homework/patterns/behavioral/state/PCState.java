@@ -1,4 +1,4 @@
-package com.homework;
+package com.homework.patterns.behavioral.state;
 
 // State pattern - State Interface
 /*

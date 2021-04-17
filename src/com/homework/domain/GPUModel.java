@@ -1,14 +1,14 @@
-package com.homework;
+package com.homework.domain;
 
 // flyweight
-class GPUModel {
+public class GPUModel {
     private String model;
     private String company;
     protected float defaultCoreClock;
     protected float defaultMemoryClock;
     protected int memorySize;
 
-    GPUModel(String company, String model, float coreClock, float memoryClock, int memorySize) {
+    public GPUModel(String company, String model, float coreClock, float memoryClock, int memorySize) {
         this.company = company;
         this.model = model;
         this.memorySize = memorySize;

@@ -1,6 +1,8 @@
-package com.homework;
+package com.homework.patterns.behavioral.state;
 
-// concrete state
+import com.homework.domain.PC;
+
+// Concrete state
 public class PCStateON implements PCState {
 
     PC pc;
